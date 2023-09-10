@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pemilihan</title>
+</head>
+<body>
+    <h1>Selamat Datang di Pemilihan</h1>
+    <p th:text="${message}"></p>
+    
+    <form action="/vote" method="post">
+        <label for="userAge">Usia Anda:</label>
+        <input type="number" id="userAge" name="userAge" required>
+        <br>
+        
+        <label>Pilihan Anda:</label>
+        <select name="userSelection">
+            <option value="1">Bayu</option>
+            <option value="2">Andi</option>
+        </select>
+        <br>
+        
+        <button type="submit">Kirim Suara</button>
+    </form>
+    
+    <h2>Hasil Pemilihan:</h2>
+    <p>Bayu: <span th:text="${candidate1Votes}"></span> suara</p>
+    <p>Andi: <span th:text="${candidate2Votes}"></span> suara</p>
+</body>
+</html>
